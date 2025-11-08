@@ -1,0 +1,12 @@
+let x = "300"
+console.log(Number("300")) // not a number 
+console.log(typeof x)  // String
+
+The Number() function converts a string to a number if it can:
+Important: Number("abc") would return NaN (Not a Number), because "abc" cannot be converted.
+
+==================================
+Operator	   Example	Meaning / Result
++	+"100"    	Converts to number → 100
+-	-"56"     	Converts to number, then negates → -56
+=====================

@@ -1,0 +1,96 @@
+in this problem :
+
+console.log(elzero.innerHTML); // object
+console.log(typeof elzero); // object
+
+// "elzero" is an HTML element retrieved using document.getElementById()
+// The innerHTML property returns the text or content inside that HTML element
+// DOM elements in JavaScript are treated as Objects
+// Even if the element is something like <div>, <h1>, or <p>
+// JavaScript internally represents every HTML element as an Object of type HTMLElement
+
+/*
+WHY this code requires using id="elzero" not class="elzero"?
+
+- When you use an HTML id, the browser automatically creates a global variable
+  with the same name as the id. For example:
+      <div id="elzero"></div>
+  This makes "elzero" available directly in JavaScript:
+      elzero.innerHTML
+
+- But when you use a class:
+      <div class="elzero"></div>
+  The browser does NOT create a global variable for class names.
+  So "elzero" will NOT exist as a variable, and you will get:
+      ReferenceError: elzero is not defined
+
+- Because we are not allowed to modify the JavaScript file or write new JS code,
+  the ONLY way for the provided code to work is to use:
+      id="elzero"
+
+Summary:
+✅ id creates a global JS variable automatically
+❌ class does NOT
+*/
+
+/*
+===========================================
+ How HTML Creates Global Variables in JS
+===========================================
+
+1) Do HTML elements really create global variables?
+   - YES, but only when the element has an id.
+   - Example:
+       <div id="test"></div>
+     The browser automatically creates:
+       window.test → HTML element
+     So you can use:
+       test.innerHTML
+
+2) Why does id become a global variable?
+   - Because "id" MUST be unique in the whole page.
+   - So the browser safely assumes the name can be used as a JS variable.
+
+   The browser internally does:
+       window[idName] = document.getElementById(idName)
+
+3) Why doesn't class create a global variable?
+   - Classes are NOT unique.
+   - A class name can appear on many elements.
+   - The browser cannot guess which element you mean.
+   - Therefore:
+       <div class="elzero"></div>
+     does NOT create:
+       window.elzero  → (undefined)
+
+4) Important notes:
+   - This behavior is called "Global ID Binding".
+   - It may NOT work in some cases:
+       ❌ If the id starts with a number
+       ❌ If the id has invalid characters
+       ❌ If “use strict” mode is active
+       ❌ If a JS variable with the same name already exists
+       ❌ Inside Shadow DOM
+
+5) Relation to JS global & local variables:
+   - Any name added to `window` is considered a GLOBAL variable.
+   - Example:
+       window.x = 10;
+       console.log(x); // 10
+
+   - Local variables are inside functions or blocks:
+       function test() {
+         let x = 10;
+       }
+       console.log(x); // Error (local only)
+
+   HTML elements NEVER create local variables,
+   they only create GLOBAL variables through the window object
+   (and ONLY when using an id).
+
+===========================================
+ Summary:
+  ✅ id="name" → creates window.name → GLOBAL variable
+  ❌ class="name" → does NOT create any variable
+===========================================
+*/

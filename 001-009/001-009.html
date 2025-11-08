@@ -1,0 +1,51 @@
+<!-- 1 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Learn JavaScript</title>
+    <script>
+      // Code One
+      document.getElementById("el").style.color = "red";  // not work 
+    </script>
+    <script>
+      // Code Two
+      window.onload = function () {
+        document.getElementById("el").style.color = "red"; //  work event
+      };
+    </script>
+  </head>
+  <body>
+    <h1 id="el">Page Title</h1>
+    <script>
+      // Code Three
+      document.getElementById("el").style.color = "red"; // works
+    </script>
+  </body>
+</html>
+
+
+
+<!-- The script must be placed under the element it interacts with.
+
+Or,  use an event like DOMContentLoaded. -->
+
+<!-- ------------------------------ -->
+ <!-- 2 -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <!-- 2 -->
+    <h1 id="el">Elzero</h1> 
+    
+    <script src="001-009.js"></script>
+ </body>
+ </html>
+
