@@ -665,17 +665,104 @@
  * Loop for Advanced Example
  */
 
-let products = ["Keyboard","Mouse","Pen","Pad","Monitor"];
-let i = 0;
+// let products = ["Keyboard","Mouse","Pen","Pad","Monitor"];
+// let i = 0;
 
-for (;;){
-  console.log(products[i])
-  i += 2
-  if (i === products.length) break;
+// for (;;){
+//   console.log(products[i])
+//   i += 2
+//   if (i === products.length) break;
+// }
+
+//================================================
+
+// function generateYears(start, end, exclude) {
+//   for (let i = start; i <= end; i++) {
+//     if (i === exclude) {
+//       continue;
+//     }
+//     console.log(i);
+//   }
+// }
+
+// generateYears(2001, 2024, 2005);
+
+// //================================================
+
+
+// function calc(x,y){
+//   return x + y ;
+// }
+
+
+// let result = calc(6,8)
+// console.log(result)
+
+//================================================
+/*
+  Function Advanced Practice
+  - Parameters
+  - Default
+  - Rest
+  - Loop
+  - Condition
+*/
+
+// function showInfo(us = "Un", ag = "Un", rt = 0, show = "Yes", ...sk) {
+//   document.write(`<div>`);
+//   document.write(`<h2>Welcome, ${us}</h2>`);
+//   document.write(`<p>Age: ${ag}</p>`);
+//   document.write(`<p>Hour Rate: $${rt}</p>`);
+//   if (show === "Yes") {
+//     if (sk.length > 0) {
+//       document.write(`<p>Skills: ${sk.join(" | ")}</p>`);
+//     } else {
+//       document.write(`<p>Skills: No Skills</p>`);
+//     }
+//   } else {
+//     document.write(`<p>Skills Is Hidden</p>`);
+//   }
+//   document.write(`</div>`);
+// }
+
+// showInfo("Osama", 38, 20, "No", "Html", "CSS");
+
+//=====================================
+
+
+// Functions 
+
+// // Any 
+// let concatName  = function (fName , LName){
+//   return `${fName} ${LName}`
+// }
+
+// console.log(concatName("Gehad","Baleegh"))
+
+// Arrow
+
+// let print = (num1,num2) => `${num1 + num2}`
+
+
+// console.log(print(1,8))
+
+
+/*
+  Scope
+  - Global And Local Scope
+*/
+
+var a = 1;
+let b = 2;
+
+function showText() {
+  var a = 10;
+  let b = 20;
+  console.log(`Function - From Local ${a}`);
+  console.log(`Function - From Local ${b}`);
 }
 
+console.log(`From Global ${a}`);
+console.log(`From Global ${b}`);
 
-
-
-
-
+showText();
