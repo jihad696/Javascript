@@ -752,17 +752,146 @@
   - Global And Local Scope
 */
 
-var a = 1;
-let b = 2;
+// var a = 1;
+// let b = 2;
 
-function showText() {
-  var a = 10;
-  let b = 20;
-  console.log(`Function - From Local ${a}`);
-  console.log(`Function - From Local ${b}`);
-}
+// function showText() {
+//   var a = 10;
+//   let b = 20;
+//   console.log(`Function - From Local ${a}`);
+//   console.log(`Function - From Local ${b}`);
+// }
 
-console.log(`From Global ${a}`);
-console.log(`From Global ${b}`);
+// console.log(`From Global ${a}`);
+// console.log(`From Global ${b}`);
 
-showText();
+// showText();
+
+//=====================================
+/*
+  Map
+  - Swap Cases
+  - Inverted Numbers
+  - Ignore Boolean Value
+*/
+
+// let swappingCases = "elzero"
+// let InvertedNumbers  = [1,-10,-20,15,100,-30]
+// let ignoreBooleans = "Elz123er4o"
+
+// let sw = swappingCases.split("").map((ele) => ele === ele.toUpperCase()?ele.toLoweCase() : ele.toUpperCase()).join("")
+// // here oin to return the output as string not arrays
+// console.log(sw)
+// let inv = InvertedNumbers.map(function (ele){
+//   return -ele;
+// })
+
+
+
+// console.log(inv)
+
+//=============================
+// let sentence = "I Love Foood Code Too Playing Much";
+
+// let res = sentence.split(" ").filter((ele) => ele.length < 4)
+
+// console.log(res)
+
+
+// Filter Strings + Multiply
+// let mix = "A13BS2ZX";
+
+// let mixedContent = mix
+//   .split("")
+//   .filter(function (ele) {
+//     return !isNaN(parseInt(ele));
+//   })
+//   .map(function (ele) {
+//     return ele * ele;
+//   })
+//   .join("");
+
+
+// console.log(mixedContent);
+
+// ===================================
+// foreach doesn't craete new array
+
+/*
+  - forEach
+  --- method executes a provided function once for each array element.
+
+  Syntax forEach(callBackFunction(Element, Index, Array) { }, thisArg)
+  - Element => The current element being processed in the array.
+  - Index => The index of the current element being processed in the array.
+  - Array - The Current Array
+
+  Note
+  - Doesnt Return Anything [Undefined]
+  - Break Will Not Break The Loop
+*/
+
+// let allLis = document.querySelectorAll("ul li");
+// let allDivs = document.querySelectorAll(".content div");
+
+// allLis.forEach(function (ele) {
+//   ele.onclick = function () {
+//     // Remove Active Class From All Elements
+//     allLis.forEach(function (ele) {
+//       ele.classList.remove("active");
+//     });
+//     // Add Active Class To This Element
+//     this.classList.add("active");
+//     // Hide All Divs
+//     allDivs.forEach(function (ele) {
+//       ele.style.display = "none";
+//     });
+//   };
+// });
+
+
+//=====================================
+
+/*
+  Object
+  - Nested Object And Trainings
+*/
+
+let available = true;
+
+let user = {
+  name: "Osama",
+  age: 38,
+  skills: ["HTML", "CSS", "JS"],
+  available: false,
+  addresses: {
+    ksa: "Riyadh",
+    egypt: {
+      one: "Cairo",
+      two: "Giza",
+    },
+  },
+  checkAv: function () {
+    if (user.available === true) {
+      return `Free For Work`;
+    } else {
+      return `Not Free`;
+    }
+  },
+};
+
+console.log(user.age)
+console.log(user.name)
+console.log(user['name'])
+console.log(user["addresses"]["ksa"])
+console.log(user.addresses.egypt)
+console.log(user.addresses.egypt.one)
+console.log(user["addresses"]["egypt"]["one"])
+console.log(user.addresses.egypt.two)
+console.log(user.skills.join("   |  "))
+console.log(user["skills"].join("   |  "))
+console.log(user.skills[2])
+console.log(user["skills"][0])
+console.log(user.checkAv())
+
+
