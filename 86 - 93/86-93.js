@@ -28,20 +28,20 @@
 // }
 
 //==============================================================
-//   const input = document.querySelector('input[name="dollar"]');
-//   const resultDiv = document.querySelector('.result');
-//   const rate = 15.6;
+  const input = document.querySelector('input[name="dollar"]');
+  const resultDiv = document.querySelector('.result');
+  const rate = 15.6;
 
-// // input.addEventListener("input", function () {
-// //   console.log(input.value); // shows the current value
+// input.addEventListener("input", function () {
+//   console.log(input.value); // shows the current value
   
-// // });
+// });
 
-//   input.addEventListener("input", function () {
-//     let dollarValue = parseFloat(input.value) || 0;
-//     let poundValue = (dollarValue * rate).toFixed(2); // max 2 decimals
-//     resultDiv.textContent = `${dollarValue} USD Dollar = ${poundValue} Egyptian Pound`;
-//   });
+  input.addEventListener("input", function () {
+    let dollarValue = parseFloat(input.value) || 0;
+    let poundValue = (dollarValue * rate).toFixed(2); // max 2 decimals
+    resultDiv.textContent = `${dollarValue} USD Dollar = ${poundValue} Egyptian Pound`;
+  });
 
 
   //=============================================================
