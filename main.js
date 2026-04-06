@@ -880,18 +880,66 @@ let user = {
   },
 };
 
-console.log(user.age)
-console.log(user.name)
-console.log(user['name'])
-console.log(user["addresses"]["ksa"])
-console.log(user.addresses.egypt)
-console.log(user.addresses.egypt.one)
-console.log(user["addresses"]["egypt"]["one"])
-console.log(user.addresses.egypt.two)
-console.log(user.skills.join("   |  "))
-console.log(user["skills"].join("   |  "))
-console.log(user.skills[2])
-console.log(user["skills"][0])
-console.log(user.checkAv())
+// console.log(user.age)
+// console.log(user.name)
+// console.log(user['name'])
+// console.log(user["addresses"]["ksa"])
+// console.log(user.addresses.egypt)
+// console.log(user.addresses.egypt.one)
+// console.log(user["addresses"]["egypt"]["one"])
+// console.log(user.addresses.egypt.two)
+// console.log(user.skills.join("   |  "))
+// console.log(user["skills"].join("   |  "))
+// console.log(user.skills[2])
+// console.log(user["skills"][0])
+// console.log(user.checkAv())
 
 
+//=====================================
+/*
+  Class
+  - Static Properties And Methods
+*/
+
+class User {
+  // Static Property
+   static count = 0;
+   #s;
+
+  constructor(id, username, salary) {
+    this.i = id;
+    this.u = username;
+    this.#s = salary;
+    User.count++;
+  }
+  // Static Methods
+  static sayHello() {
+    return `Hello From Class`;
+  }
+  static countMembers() {
+    return `${this.count} Members Created`;
+  }
+  getSalary()
+  {
+    return `This employee salary is ${this.#s}`
+  }
+}
+
+let personOne = new User (102,"elzero",20000)
+console.log(personOne.getSalary())
+
+class Admin extends User{
+  constructor(id, username, salary,permissions)
+  {
+    super(id, username, salary)
+    this.per = permissions;
+  }
+}
+
+
+
+let personTwo = new Admin (5, 'username', 5000, 1)
+console.log(personTwo.getSalary())
+console.log(personTwo)
+
+User.prototype.sayWelcome = () => 'Hello from welcome function';
